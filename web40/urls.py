@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from web40.apps.solicitarturno.views import home
+from web40.apps.pacientes.views import login_view, registration_view, logout_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home),
+    path('accounts/login/', login_view),
+    path('accounts/signup/', registration_view),
+    path('accounts/logout/', logout_view),
 ]
